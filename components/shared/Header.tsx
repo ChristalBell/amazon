@@ -109,7 +109,7 @@ const Header = () => {
             variant="body2"
             sx={{ fontWeight: 700, "&:hover": { color: COLORS.orange } }}
           >
-            Shop Black-owned businesses
+            Shop Black-owned business
           </Typography>
         </HeaderLink>
       </Box>
