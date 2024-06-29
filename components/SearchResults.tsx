@@ -1,5 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
+import ProductCard from "./ProductCard";
 
 const SearchResults = ({ products }: { products: any[] }) => {
   return (
@@ -12,7 +13,7 @@ const SearchResults = ({ products }: { products: any[] }) => {
       }}
     >
       {products.map((product) => {
-        return <Box key={product.id}>{product.title}</Box>;
+        return <ProductCard product={product} key={product.id} />;
       })}
     </Box>
   );
