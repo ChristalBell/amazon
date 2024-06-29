@@ -4,17 +4,17 @@ import Typography from "@mui/material/Typography";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
-  const [product, setProduct] = useState({});
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => setProduct(data))
+      .then((data) => setProducts(data))
       .catch((error) => {
         console.error(error);
       });
   }, []);
-  console.log(product);
+  console.log(products);
 
   return (
     <Box>
