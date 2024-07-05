@@ -15,25 +15,22 @@ const Home = () => {
       title: "",
     },
   ]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => {
-        setProducts(data);
-        setIsLoading(false);
+      .then((data) => setProducts(data))
+      .catch((error) => {
+        console.error(error);
       });
-
-    // .catch((error) => {
-    //   console.error(error);
-    // });
   }, []);
+
   console.log(products);
 
-  if (isLoading) {
-    return <div>Loading </div>;
-  }
+  // if (isLoading) {
+  //   return <div>Loading </div>;
+  // }
   return (
     <Box>
       <Typography variant="h1">Home</Typography>
