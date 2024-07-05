@@ -25,6 +25,7 @@ const ProductCard = ({ product }: { product: any }) => {
       <Link href={`/product/${product.id}`} style={{ textDecoration: "none" }}>
         <Typography variant="h2" sx={{ fontWeight: 500, color: COLORS.black }}>
           {/* {product.title.substring(0, 15)}... */}
+          {product.title}
         </Typography>
         <Ratings rating={product.rating} />
         <Typography variant="h2" sx={{ fontWeight: 700, color: COLORS.black }}>
