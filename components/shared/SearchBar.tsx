@@ -5,19 +5,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import { COLORS } from "@/styles/colors";
 import { useRouter } from "next/navigation";
 
-const SearchBar = ({ product }: { product: any[] }) => {
+const SearchBar = ({ products }: { products: any[] }) => {
   const [query, setQuery] = useState<string>("");
   const router = useRouter();
-  const [searchedProduct, setSearchedProduct] = useState(product);
 
+  // shows the searched item in https:
   const searchProducts = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`/search/${query}/`);
-    setSearchedProduct(
-      product.filter((product) =>
-        product.title.toLowerCase().includes(query.toLowerCase())
-      )
-    );
   };
 
   return (

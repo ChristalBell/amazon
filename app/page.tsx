@@ -1,7 +1,7 @@
 "use client";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 
 const Home = () => {
   const [products, setProducts] = useState([
@@ -15,7 +15,6 @@ const Home = () => {
       title: "",
     },
   ]);
-  // const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -28,9 +27,6 @@ const Home = () => {
 
   console.log(products);
 
-  // if (isLoading) {
-  //   return <div>Loading </div>;
-  // }
   return (
     <Box>
       <Typography variant="h1">Home</Typography>

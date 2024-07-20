@@ -7,6 +7,7 @@ import React from "react";
 import Ratings from "./shared/Ratings";
 
 const ProductCard = ({ product }: { product: any }) => {
+  console.log(product.title);
   return (
     <Box
       sx={{
@@ -24,7 +25,6 @@ const ProductCard = ({ product }: { product: any }) => {
       <Image alt={product.title} src={product.image} width={225} height={257} />
       <Link href={`/product/${product.id}`} style={{ textDecoration: "none" }}>
         <Typography variant="h2" sx={{ fontWeight: 500, color: COLORS.black }}>
-          {/* {product.title.substring(0, 15)}... */}
           {product.title}
         </Typography>
         <Ratings rating={product.rating} />

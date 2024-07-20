@@ -13,7 +13,16 @@ const SearchResults = ({ products }: { products: any[] }) => {
       }}
     >
       {products.map((product) => {
-        return <ProductCard product={product} key={product.id} />;
+        return (
+          <ProductCard
+            // product={product}
+            key={product.id}
+            image={product.image}
+            title={product.title}
+            price={product.price}
+            rating={product.rating}
+          />
+        );
       })}
     </Box>
   );

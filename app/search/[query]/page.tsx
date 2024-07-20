@@ -1,14 +1,16 @@
 "use client";
 import SearchResults from "@/components/SearchResults";
 import { useParams } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 
-const QueryPage = () => {
+const QueryPage = ({ products }: { products: any[] }) => {
   const { query } = useParams();
+  console.log(products);
 
   return (
     <div>
-      <SearchResults products={[query]} />
+      <p>query page</p>
+      {/* {<SearchResults products={filteredProducts} />} */}
     </div>
   );
 };
