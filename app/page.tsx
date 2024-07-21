@@ -16,16 +16,37 @@ const Home = () => {
     },
   ]);
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [filteredProducts, setFilteredProducts] = useState(products);
+  const filterProducts = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFilteredProducts(
+      products.filter((product) =>
+        product.title.toLowerCase().includes(event.target.value.toLowerCase())
+      )
+    );
+  };
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => setProducts(data))
+      .then((data) => {
+        setProducts(data);
+        setFilteredProducts(data);
+        setIsLoading(false);
+      })
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
   console.log(products);
+
+  if (isLoading) {
+    return <div> Loading...</div>;
+  }
 
   return (
     <Box>

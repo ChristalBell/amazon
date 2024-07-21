@@ -15,6 +15,11 @@ const SearchBar = ({ products }: { products: any[] }) => {
     router.push(`/search/${query}/`);
   };
 
+  // const handleChange = (event: SelectChangeEvent) => {
+  //   setQuery(event.target.value as string);
+  //   setFilteredProducts(event.target.value);
+  // };
+
   return (
     <Paper
       component="form"

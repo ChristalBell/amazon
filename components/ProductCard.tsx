@@ -1,3 +1,4 @@
+"use client";
 import { COLORS } from "@/styles/colors";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -6,8 +7,15 @@ import Link from "next/link";
 import React from "react";
 import Ratings from "./shared/Ratings";
 
-const ProductCard = ({ product }: { product: any }) => {
-  console.log(product.title);
+interface Props {
+  id: number;
+  image: string;
+  price: number;
+  title: string;
+  // rating: { rate: number; count: number };
+}
+
+const ProductCard = ({ id, image, price, title }: Props) => {
   return (
     <Box
       sx={{
@@ -22,14 +30,14 @@ const ProductCard = ({ product }: { product: any }) => {
         alignItems: "center",
       }}
     >
-      <Image alt={product.title} src={product.image} width={225} height={257} />
-      <Link href={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+      <Image alt={title} src={image} width={225} height={257} />
+      <Link href={`/product/${id}`} style={{ textDecoration: "none" }}>
         <Typography variant="h2" sx={{ fontWeight: 500, color: COLORS.black }}>
-          {product.title}
+          {title}
         </Typography>
-        <Ratings rating={product.rating} />
+        {/* <Ratings rating={rating} /> */}
         <Typography variant="h2" sx={{ fontWeight: 700, color: COLORS.black }}>
-          ${product.price}
+          ${price}
         </Typography>
       </Link>
     </Box>

@@ -1,5 +1,5 @@
+import { Box } from "@mui/material";
 import React from "react";
-import Box from "@mui/material/Box";
 import ProductCard from "./ProductCard";
 
 const SearchResults = ({ products }: { products: any[] }) => {
@@ -15,12 +15,12 @@ const SearchResults = ({ products }: { products: any[] }) => {
       {products.map((product) => {
         return (
           <ProductCard
-            // product={product}
+            id={product.id}
             key={product.id}
             image={product.image}
             title={product.title}
             price={product.price}
-            rating={product.rating}
+            // rating={product.rating}
           />
         );
       })}
