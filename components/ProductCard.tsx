@@ -1,21 +1,23 @@
 "use client";
 import { COLORS } from "@/styles/colors";
-import { Typography } from "@mui/material";
-import Box from "@mui/material/Box";
+import { Typography, Box } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Ratings from "./shared/Ratings";
+import { useRouter } from "next/navigation";
 
 interface Props {
   id: number;
   image: string;
   price: number;
   title: string;
-  // rating: { rate: number; count: number };
+  rating: { rate: number; count: number };
 }
 
-const ProductCard = ({ id, image, price, title }: Props) => {
+const ProductCard = ({ id, image, price, title, rating }: Props) => {
+  const router = useRouter();
+
   return (
     <Box
       sx={{

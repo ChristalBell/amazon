@@ -18,23 +18,28 @@ const Home = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  const [filteredProducts, setFilteredProducts] = useState(products);
-  const filterProducts = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFilteredProducts(
-      products.filter((product) =>
-        product.title.toLowerCase().includes(event.target.value.toLowerCase())
-      )
-    );
+  console.log(products);
+
+  // test filter
+
+  const searchItems = () => {
+    return products.filter((product) => {
+      return product.title.toLowerCase().includes("gold");
+    });
   };
+  // console.log(searchItems());
+
+  const found = searchItems();
+  console.log("the bottom is found ");
+  console.log(found);
+
+  // end of test filter
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
-        setFilteredProducts(data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -42,7 +47,7 @@ const Home = () => {
       });
   }, []);
 
-  console.log(products);
+  // console.log(products);
 
   if (isLoading) {
     return <div> Loading...</div>;

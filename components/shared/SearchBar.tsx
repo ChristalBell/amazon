@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { COLORS } from "@/styles/colors";
 import { useRouter } from "next/navigation";
 
-const SearchBar = ({ products }: { products: any[] }) => {
+const SearchBar = () => {
   const [query, setQuery] = useState<string>("");
   const router = useRouter();
 
@@ -14,11 +14,6 @@ const SearchBar = ({ products }: { products: any[] }) => {
     e.preventDefault();
     router.push(`/search/${query}/`);
   };
-
-  // const handleChange = (event: SelectChangeEvent) => {
-  //   setQuery(event.target.value as string);
-  //   setFilteredProducts(event.target.value);
-  // };
 
   return (
     <Paper
