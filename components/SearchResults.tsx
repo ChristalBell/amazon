@@ -2,13 +2,6 @@ import { Box } from "@mui/material";
 import React from "react";
 import ProductCard from "./ProductCard";
 
-// interface Props {
-//   id: number;
-//   title: string;
-//   image: string;
-//   price: number;
-//   rating: { rate: number; count: number };
-// }
 const SearchResults = ({ products }: { products: any[] }) => {
   console.log(products);
 
