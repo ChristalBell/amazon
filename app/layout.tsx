@@ -6,6 +6,7 @@ import { ThemeProvider } from "@mui/material";
 import theme from "@/styles/theme";
 import { COLORS } from "@/styles/colors";
 import Header from "@/components/shared/Header";
+
 import { store } from ".//../store/index";
 import { Provider as ReduxProvider } from "react-redux";
 const inter = Inter({ subsets: ["latin"] });
@@ -27,11 +28,9 @@ export default function RootLayout({
         style={{ backgroundColor: COLORS.lightGrey, margin: 0 }}
       >
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ReduxProvider store={store}>
-            <ThemeProvider theme={theme}>
-              <Header /> {children}
-            </ThemeProvider>
-          </ReduxProvider>
+          <ThemeProvider theme={theme}>
+            <Header /> {children}
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
