@@ -1,38 +1,23 @@
 "use client";
 import SearchResults from "@/components/SearchResults";
+import { Home } from "@mui/icons-material";
 import { useParams } from "next/navigation";
 import { title } from "process";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-// interface Props {
-//   id: number;
-//   title: string;
-//   image: string;
-//   price: number;
-//   rating: { rate: number; count: number };
-// }
-
-// { products }: { products: any[] }
 const QueryPage = () => {
   const { query } = useParams();
-  // const [filteredProducts, setFilteredProducts] = useState([{ products }]);
 
-  // const searchProducts = () => {
-  //   const filterProducts = filteredProducts.filter((filteredProduct) =>
-  //     filteredProduct.title.toLowerCase().includes(query)
-  //   );
-  //   setFilteredProducts(filterProducts);
+  // const filterProducts = () => {
+  //   return products.filter((product) => {
+  //     return product.title.toLowerCase().includes(query);
+  //   });
   // };
 
-  // useEffect(() => {
-  //   console.log(query);
-  //   console.log(products);
-  //   console.log("use effect ran");
-  //   console.log(filteredProducts);
-  // });
-
-  const [filteredProducts, setFilteredProducts] = useState();
-  console.log(query);
+  // const filteredProducts = filterProducts();
+  // console.log("the bottom is found ");
+  // console.log(filteredProducts);
 
   return (
     <div>
