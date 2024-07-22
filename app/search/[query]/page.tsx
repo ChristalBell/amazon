@@ -21,22 +21,14 @@ const QueryPage = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(products);
-
-  // test filter
-
   const filterProducts = () => {
     return products.filter((product) => {
       return product.title.toLowerCase().includes(query.toString());
     });
   };
-  // console.log(searchItems());
 
   const filteredProducts = filterProducts();
-  console.log("the bottom is found ");
   console.log(filteredProducts);
-
-  // end of test filter
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -50,15 +42,15 @@ const QueryPage = () => {
       });
   }, []);
 
-  // console.log(products);
-
   if (isLoading) {
-    return <div> Loading...</div>;
+    return <div> Looking for your products. Thanks for waiting</div>;
   }
+
+  console.log(products);
 
   return (
     <div>
-      <p>query page</p>
+      <p>This is your Search Page</p>
       {<SearchResults products={filteredProducts} />}
     </div>
   );
