@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Image from "next/image";
 import React from "react";
 
-const Ratings = ({ rating }: { rating: number }) => {
+const Ratings = ({ rating }: { rating: any }) => {
   return (
     <Box sx={{ display: "flex", alignItems: "center", margin: "0.5rem 0" }}>
       <Box sx={{ marginRight: "0.5rem" }}>
@@ -21,7 +21,7 @@ const Ratings = ({ rating }: { rating: number }) => {
           "&:hover": { color: COLORS.orange },
         }}
       >
-        {/* {rating.count} */}
+        {rating.count}
       </Typography>
     </Box>
   );
