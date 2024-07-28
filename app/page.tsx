@@ -7,6 +7,7 @@ const Home = () => {
   return (
     <Box>
       <Typography variant="h1">Home</Typography>
+      <p> this is my main page</p>
     </Box>
   );
 };
