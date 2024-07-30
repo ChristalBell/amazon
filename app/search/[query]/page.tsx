@@ -3,11 +3,9 @@ import SearchResults from "@/components/SearchResults";
 import { Home } from "@mui/icons-material";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Products } from "@/types/api";
 
 const QueryPage = () => {
   const { query } = useParams();
-  const [products, setProducts] = useState<Products[]>([]);
 
   const filterProducts = () => {
     return products.filter((product) => {

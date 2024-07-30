@@ -1,7 +1,7 @@
-import { getProducts } from "@/lib/api/products";
-import { Products } from "@/types/api";
+import { allProducts } from "@/lib/api/products";
 import { useState } from "react";
 
 export const useApi = () => {
-  const [products, setProducts] = useState<Products[]>([]);
+  const [products, setProducts] = useState(allProducts());
+  console.log(products);
 };
