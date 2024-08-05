@@ -27,13 +27,13 @@ export default function RootLayout({
         className={inter.className}
         style={{ backgroundColor: COLORS.lightGrey, margin: 0 }}
       >
-        {/* <Provider store={store}> */}
-        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ThemeProvider theme={theme}>
-            <Header /> {children}
-          </ThemeProvider>
-        </AppRouterCacheProvider>
-        {/* </Provider> */}
+        <Provider store={store}>
+          <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+            <ThemeProvider theme={theme}>
+              <Header /> {children}
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        </Provider>
       </body>
     </html>
   );
