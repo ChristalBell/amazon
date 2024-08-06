@@ -3,7 +3,7 @@ import SearchResults from "@/components/SearchResults";
 import { Home } from "@mui/icons-material";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useSelector, UseSelector } from "react-redux";
+import { useSelector } from "react-redux";
 // import {Products} from "@/types/api"
 
 const QueryPage = () => {

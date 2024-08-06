@@ -7,7 +7,7 @@ import theme from "@/styles/theme";
 import { COLORS } from "@/styles/colors";
 import Header from "@/components/shared/Header";
 
-import { store } from ".//../store/index";
+import { store } from "../store/index";
 import { Provider } from "react-redux";
 const inter = Inter({ subsets: ["latin"] });
 
