@@ -18,11 +18,13 @@ const Home = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, [dispatch]);
+    // }, [dispatch]);
+  });
 
-  if (isLoading) {
-    return <div> Looking for your products. Thanks for waiting</div>;
-  }
+  //   if (isLoading) {
+  //     return <div> Looking for your products. Thanks for waiting</div>;
+  //   }
+  // });
 
   return (
     <Box>
