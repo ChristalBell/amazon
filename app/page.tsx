@@ -14,17 +14,18 @@ const Home = () => {
       .then((data) => {
         dispatch(setProducts(data));
         setIsLoading(false);
+        console.log(setProducts);
       })
       .catch((error) => {
         console.error(error);
+        console.log(setProducts);
       });
     // }, [dispatch]);
   });
 
-  //   if (isLoading) {
-  //     return <div> Looking for your products. Thanks for waiting</div>;
-  //   }
-  // });
+  if (isLoading) {
+    return <div> Looking for your products. Thanks for waiting</div>;
+  }
 
   return (
     <Box>
