@@ -20,12 +20,12 @@ const Home = () => {
         console.error(error);
         console.log(setProducts);
       });
-    // }, [dispatch]);
-  });
+  }, [dispatch]);
+  // });
 
-  // if (isLoading) {
-  //   return <div> Looking for your products. Thanks for waiting</div>;
-  // }
+  if (isLoading) {
+    return <div> Looking for your products. Thanks for waiting</div>;
+  }
 
   return (
     <Box>
