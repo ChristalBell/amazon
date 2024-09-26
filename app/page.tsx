@@ -2,37 +2,29 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import React, { FormEvent, useEffect, useState } from "react";
-import { useDispatch, UseDispatch } from "react-redux";
-import { setProducts } from "@/store/productsSlice";
-const Home = () => {
-  const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(true);
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../store/productsSlice";
+import { AppDispatch, RootState } from "../store/index";
+
+const DataDisplay: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { data, loading, error } = useSelector((state: RootState) => state.api);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => {
-        dispatch(setProducts(data));
-        setIsLoading(false);
-        console.log(setProducts);
-      })
-      .catch((error) => {
-        console.error(error);
-        console.log(setProducts);
-      });
+    dispatch(fetchData());
   }, [dispatch]);
-  // });
 
-  if (isLoading) {
-    return <div> Looking for your products. Thanks for waiting</div>;
-  }
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div> Error: {error}</div>;
+  console.log(data);
 
   return (
-    <Box>
-      <Typography variant="h1">Home</Typography>
-      <p> this is my main page</p>
-    </Box>
+    <ul>
+      {data.map((item) => (
+        <li key={item.id}>{item.title}</li>
+      ))}
+    </ul>
   );
 };
 
-export default Home;
+export default DataDisplay;

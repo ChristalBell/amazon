@@ -1,10 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
-import productsSlice from "./productsSlice";
-import productsReducer from "./productsSlice";
+import { configureStore, Tuple } from "@reduxjs/toolkit";
+import apiSlice from "../store/productsSlice";
 
 export const store = configureStore({
   reducer: {
-    products: productsReducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
+
+    middleware: () => new Tuple(apiSlice),
   },
 });
 
