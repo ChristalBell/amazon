@@ -5,6 +5,8 @@ import React, { FormEvent, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../store/productsSlice";
 import { AppDispatch, RootState } from "../store/index";
+import ProductCard from "../components/ProductCard";
+import { wrap } from "module";
 
 const DataDisplay: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -19,11 +21,25 @@ const DataDisplay: React.FC = () => {
   console.log(data);
 
   return (
-    <ul>
-      {data.map((item) => (
-        <li key={item.id}>{item.title}</li>
-      ))}
-    </ul>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
+      {data.map((product) => {
+        return (
+          <ProductCard
+            key={product.title}
+            image={product.image}
+            price={product.price}
+            title={product.title}
+            id={product.id}
+          />
+        );
+      })}
+
+      {/* <ul>
+        {data.map((product) => (
+          <li key={product.id}>{product.title}</li>
+        ))}
+      </ul> */}
+    </div>
   );
 };
 

@@ -8,17 +8,27 @@ import Ratings from "./shared/Ratings";
 import { useRouter } from "next/navigation";
 import { RateReview } from "@mui/icons-material";
 
-interface Props {
+// interface Props {
+//   id: number;
+//   image: string;
+//   price: number;
+//   title: string;
+//   rating: any;
+// }
+
+// then import {product} : {product: any} instead of props down below. then everything will change to product. blah
+
+const ProductCard = ({
+  image,
+  price,
+  title,
+  id,
+}: {
   id: number;
   image: string;
   price: number;
   title: string;
-  rating: any;
-}
-
-// then import {product} : {product: any} instead of props down below. then everything will change to product. blah
-
-const ProductCard = ({ id, image, price, title, rating }: Props) => {
+}) => {
   const router = useRouter();
 
   // uncomment this down below once you fix api
@@ -40,14 +50,14 @@ const ProductCard = ({ id, image, price, title, rating }: Props) => {
         justifyContent: "space-between",
         alignItems: "center",
       }}
-      onClick={selectProduct}
+      // onClick={selectProduct}
     >
-      <Image alt={title} src={image} width={225} height={257} />
-      <Link href={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+      <Image alt={title} src={image} width={225} height={257} priority={true} />
+      <Link href={`/product/${id}`} style={{ textDecoration: "none" }}>
         <Typography variant="h2" sx={{ fontWeight: 500, color: COLORS.black }}>
           {title}
         </Typography>
-        <Ratings rating={rating} />
+        {/* <Ratings rating={rating} /> */}
         <Typography variant="h2" sx={{ fontWeight: 700, color: COLORS.black }}>
           ${price}
         </Typography>
