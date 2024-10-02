@@ -8,8 +8,6 @@ import Ratings from "./shared/Ratings";
 import { useRouter } from "next/navigation";
 import { RateReview } from "@mui/icons-material";
 
-// then import {product} : {product: any} instead of props down below. then everything will change to product. blah
-
 const ProductCard = ({
   image,
   price,

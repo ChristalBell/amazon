@@ -1,14 +1,15 @@
 "use client";
 import SearchResults from "@/components/SearchResults";
+import {} fom "../../store"; 
+
 import { Home } from "@mui/icons-material";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-// import {Products} from "@/types/api"
+import { useDispatch, useSelector } from "react-redux";
 
 const QueryPage = () => {
-  const { query } = useParams();
-  const products = useSelector((state) => state.products);
+  // const { query } = useParams();
+  // const products = useSelector((state) => state.products);
 
   const filterProducts = () => {
     return products.filter((product) => {

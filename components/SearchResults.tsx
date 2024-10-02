@@ -22,7 +22,6 @@ const SearchResults = ({ products }: { products: any[] }) => {
             image={product.image}
             title={product.title}
             price={product.price}
-            rating={product.rating}
           />
         );
       })}
