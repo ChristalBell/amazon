@@ -1,12 +1,9 @@
 "use client";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../store/productsSlice";
 import { AppDispatch, RootState } from "../store/index";
 import ProductCard from "../components/ProductCard";
-import { wrap } from "module";
 
 const DataDisplay: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
