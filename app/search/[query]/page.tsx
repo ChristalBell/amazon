@@ -12,6 +12,7 @@ const QueryPage = () => {
   // const products = useSelector((state) => state.products);
   const products = useSelector((state: RootState) => state.api);
 
+  console.log(products);
   const filterProducts = () => {
     return products.filter((product) => {
       return product.title.toLowerCase().includes(query.toString());
