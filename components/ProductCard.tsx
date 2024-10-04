@@ -22,10 +22,10 @@ const ProductCard = ({
   const router = useRouter();
 
   // uncomment this down below once you fix api
-  // const selectProduct = (e: any) => {
-  //   e.preventDefault();
-  //   router.push(`/product/${product.id}`);
-  // };
+  const selectProduct = (e: any) => {
+    e.preventDefault();
+    router.push(`/product/${id}`);
+  };
 
   return (
     <Box
@@ -40,7 +40,7 @@ const ProductCard = ({
         justifyContent: "space-between",
         alignItems: "center",
       }}
-      // onClick={selectProduct}
+      onClick={selectProduct}
     >
       <Image alt={title} src={image} width={225} height={257} priority={true} />
       <Link href={`/product/${id}`} style={{ textDecoration: "none" }}>

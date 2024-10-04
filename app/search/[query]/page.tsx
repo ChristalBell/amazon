@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 const QueryPage = () => {
   const { query } = useParams();
-  // const products = useSelector((state) => state.products);
   const products = useSelector((state: RootState) => state.api.data);
 
   console.log(products);
