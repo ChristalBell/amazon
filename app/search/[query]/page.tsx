@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 const QueryPage = () => {
   const { query } = useParams();
   // const products = useSelector((state) => state.products);
-  const products = useSelector((state: RootState) => state.api);
+  const products = useSelector((state: RootState) => state.api.data);
 
   console.log(products);
   const filterProducts = () => {
@@ -22,8 +22,7 @@ const QueryPage = () => {
   console.log(filteredProducts);
 
   return (
-    <div>
-      <p>This is your Search Page</p>
+    <div style={{ display: "flex" }}>
       {<SearchResults products={filteredProducts} />}
     </div>
   );
