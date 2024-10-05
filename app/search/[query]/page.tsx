@@ -1,10 +1,9 @@
 "use client";
 import SearchResults from "@/components/SearchResults";
-import { fetchData } from "../../../store/productsSlice";
-import { AppDispatch, RootState } from "../../../store/index";
+
+import { RootState } from "../../../store/index";
 import { Home } from "@mui/icons-material";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const QueryPage = () => {

@@ -1,28 +1,43 @@
 "use client";
 import ProductCard from "@/components/ProductCard";
 import Box from "@mui/material/Box";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store/index";
+import { Container } from "@mui/material";
+import { singleProduct } from "@/store/productsSlice";
 
-const ProductPage = () => {
-  const { id } = useParams();
-  const singleProduct = useSelector((state: RootState) => state.api.data);
-
-  console.log(singleProduct);
-
+const ProductPage: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const single = useSelector((state: RootState) => state.api);
   useEffect(() => {
-    singleProduct(Number(id));
-  }, [singleProduct, id]);
-  // const {singleProduct, getSingleProduct} = use
+    dispatch(singleProduct(id));
+  }, [dispatch]);
 
-  // const {id} = useParams()
+  // const dispatch = useDispatch<AppDispatch>();
+  // const singleProduct = useSelector((state: RootState) => state.api);
+
+  // useEffect(() => {
+  //   dispatch(fetchData());
+  // }, [dispatch]);
+  // const { id } = useParams();
+
   // console.log(singleProduct);
-  // useEffect(()=> {
-  //   getSingleProduct(Number(id))
-  // },[getSingleProduct, id])
+
+  // const { id } = useParams();
+  // const products = useSelector((state: RootState) => state.api.data);
+
+  // console.log(products);
+  // const filterProducts = () => {
+  //   return products.filter((product) => {
+  //     // return product.id.includes(id.toString());
+  //     return product.title.toLowerCase().includes(id.toString());
+  //   });
+  // };
+  // const filteredProducts = filterProducts();
+  // console.log(filteredProducts);
 
   return (
     <div>
@@ -31,15 +46,9 @@ const ProductPage = () => {
         also fix the products card
       </p>
       <Box>
-        <p>{title}</p>
-        <Image
-          alt={title}
-          src={image}
-          width={225}
-          height={257}
-          priority={true}
-        />
+        <Container maxWidth="xl">Single Product Page</Container>
       </Box>
+      {/* <p>{title}</p> */}
     </div>
   );
 };
