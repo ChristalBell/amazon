@@ -1,47 +1,38 @@
 "use client";
-import ProductCard from "@/components/ProductCard";
 import Box from "@mui/material/Box";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { useParams } from "next/navigation";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../../store/index";
 import { Container } from "@mui/material";
-import { singleProduct } from "@/store/productsSlice";
+import { useParams } from "next/navigation";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/index";
+import { fetchProduct } from "@/store/productsSlice";
+import ProductDetails from "@/components/ProductDetails";
 
-const ProductPage: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const single = useSelector((state: RootState) => state.api);
-  useEffect(() => {
-    dispatch(singleProduct(id));
-  }, [dispatch]);
+const ProductPage = () => {
+  // const oneProduct = useSelector((state) => fetchProduct);
+  const { id } = useParams();
+  console.log(id);
+  // console.log(oneProduct);
 
-  // const dispatch = useDispatch<AppDispatch>();
-  // const singleProduct = useSelector((state: RootState) => state.api);
-
-  // useEffect(() => {
-  //   dispatch(fetchData());
-  // }, [dispatch]);
-  // const { id } = useParams();
-
-  // console.log(singleProduct);
-
-  // const { id } = useParams();
-  // const products = useSelector((state: RootState) => state.api.data);
-
-  // console.log(products);
-  // const filterProducts = () => {
+  // const getSingleProduct = () => {
   //   return products.filter((product) => {
-  //     // return product.id.includes(id.toString());
   //     return product.title.toLowerCase().includes(id.toString());
   //   });
   // };
-  // const filteredProducts = filterProducts();
-  // console.log(filteredProducts);
+  // const singleProduct = getSingleProduct();
+  // console.log(singleProduct);
+
+  // const getSingleProduct = () => {
+
+  //     return filteredProducts.id;
+  //   };
+  // };
+  // const oneProduct = getSingleProduct();
+  // console.log(oneProduct);
 
   return (
     <div>
       <p>
+        {/* <ProductDetails id={id} /> */}
         this is a single product page Set up global api first to hook this up
         also fix the products card
       </p>

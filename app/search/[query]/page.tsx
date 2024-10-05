@@ -1,6 +1,5 @@
 "use client";
 import SearchResults from "@/components/SearchResults";
-
 import { RootState } from "../../../store/index";
 import { Home } from "@mui/icons-material";
 import { useParams } from "next/navigation";

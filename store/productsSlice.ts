@@ -15,15 +15,11 @@ export const fetchData = createAsyncThunk("data/fetchData", async () => {
   return response.json();
 });
 
-// export const fetchSingleProduct = createAsyncThunk(
-//   "data/fetchSingleProduct",
-//   async (id: number) => {
-//     const singleProduct = await fetch(
-//       "https://fakestoreapi.com/products/".fetchById(id)
-//     );
-//     return singleProduct.json();
-//   }
-// );
+export const fetchProduct = createAsyncThunk("data/fetchData", async () => {
+  const response = await fetch("https://fakestoreapi.com/products/1")
+    .then((res) => res.json())
+    .then((json) => console.log(json));
+});
 
 const apiSlice = createSlice({
   name: "api",
@@ -43,6 +39,11 @@ const apiSlice = createSlice({
         state.loading = false;
         state.error = action.error.message || "failed to fetch data";
       });
+
+    // .addCase(fetchProduct.fulfilled, (state, action) => {
+    //   state.loading = false;
+    //   state.data = action.payload;
+    // });
   },
 });
 
