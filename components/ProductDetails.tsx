@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 import { RootState } from "@reduxjs/toolkit/query";
 import { title } from "process";
 import PrimeCard from "./PrimeCard";
+import SinglePriceCard from "./SinglePriceCard";
 
 const ProductDetails = () => {
   return (
@@ -24,7 +25,7 @@ const ProductDetails = () => {
         <h4>Title</h4>
         <p>Rating</p>
         <h3>Price</h3>
-        <p>
+        <p style={{ color: COLORS.teal }}>
           <b>Free</b> Returns
         </p>
         <p>Lower Price Availability </p>
@@ -32,12 +33,15 @@ const ProductDetails = () => {
         <p>descriptions </p>
       </Box>
       <Box>
-        <Box>
-          <PrimeCard />{" "}
-        </Box>
-        <Box>
-          <p>Pricing</p>
-          <p>Add to Cart Button</p>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <PrimeCard />
+          <SinglePriceCard />
         </Box>
       </Box>
     </Container>

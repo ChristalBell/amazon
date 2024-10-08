@@ -1,15 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { COLORS } from "@/styles/colors";
 const PrimeCard = () => {
   return (
     <div>
-      <Image
-        alt="logo"
-        src="/../../../prime-logo.png"
-        width={100}
-        height={30}
-      />
+      <Image alt="logo" src="/public/prime-logo.png" height={10} width={80} />
       <p>
         <b>
           Enjoy fast, free delivery, exclusive deals, and award-wining moves &
@@ -18,7 +14,16 @@ const PrimeCard = () => {
       </p>
 
       <p>
-        <Link href="/">Try Prime</Link>
+        <Link
+          href="/"
+          style={{
+            color: COLORS.teal,
+            textDecoration: "none",
+            marginRight: ".25rem",
+          }}
+        >
+          Try Prime
+        </Link>
         and start saving today with <b>fast, free delivery</b>
       </p>
     </div>
