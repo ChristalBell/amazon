@@ -15,11 +15,11 @@ export const fetchData = createAsyncThunk("data/fetchData", async () => {
   return response.json();
 });
 
-export const fetchProduct = createAsyncThunk("data/fetchData", async () => {
-  const response = await fetch("https://fakestoreapi.com/products/1")
-    .then((res) => res.json())
-    .then((json) => console.log(json));
-});
+// export const fetchProduct = createAsyncThunk("data/fetchData", async () => {
+//   const response = await fetch("https://fakestoreapi.com/products/1")
+//     .then((res) => res.json())
+//     .then((json) => console.log(json));
+// });
 
 const apiSlice = createSlice({
   name: "api",
