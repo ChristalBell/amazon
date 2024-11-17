@@ -2,14 +2,11 @@
 import { COLORS } from "@/styles/colors";
 import { Box, Container } from "@mui/material";
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "next/navigation";
-import { RootState } from "@reduxjs/toolkit/query";
-import { title } from "process";
 import PrimeCard from "./PrimeCard";
 import SinglePriceCard from "./SinglePriceCard";
 
-const ProductDetails = () => {
+const ProductDetails = ({ product }: { product: any }) => {
+  console.log(product);
   return (
     <Container
       sx={{
@@ -19,12 +16,12 @@ const ProductDetails = () => {
       }}
     >
       <Box>
-        <p>Image goes here</p>
+        <p>image</p>
       </Box>
       <Box>
-        <h4>Title</h4>
+        <h4>{product.title}</h4>
         <p>Rating</p>
-        <h3>Price</h3>
+        <h3>$price</h3>
         <p style={{ color: COLORS.teal }}>
           <b>Free</b> Returns
         </p>
