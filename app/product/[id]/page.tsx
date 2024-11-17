@@ -14,6 +14,8 @@ const ProductPage = () => {
   useEffect(() => {
     setProduct(products.filter((item) => item.id === Number(id)));
   }, [id, products]);
+
+  console.log(products);
   return <ProductDetails product={product} />;
 };
 

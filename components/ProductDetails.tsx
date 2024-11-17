@@ -6,7 +6,7 @@ import PrimeCard from "./PrimeCard";
 import SinglePriceCard from "./SinglePriceCard";
 
 const ProductDetails = ({ product }: { product: any }) => {
-  console.log(product);
+  console.log(product.title);
   return (
     <Container
       sx={{
@@ -21,7 +21,7 @@ const ProductDetails = ({ product }: { product: any }) => {
       <Box>
         <h4>{product.title}</h4>
         <p>Rating</p>
-        <h3>$price</h3>
+        <h3>${product.price}</h3>
         <p style={{ color: COLORS.teal }}>
           <b>Free</b> Returns
         </p>
