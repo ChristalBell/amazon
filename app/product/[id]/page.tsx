@@ -12,10 +12,11 @@ const ProductPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    setProduct(products.filter((item) => item.id === Number(id)));
+    fetch(`https://fakestoreapi.com/products/${id}`)
+      .then((data) => data.json())
+      .then((product) => setProduct(product));
   }, [id, products]);
 
-  console.log(products);
   return <ProductDetails product={product} />;
 };
 

@@ -2,13 +2,13 @@ import { COLORS } from "@/styles/colors";
 import React from "react";
 import AddToCartButton from "./shared/AddToCartButton";
 
-const SinglePriceCard = () => {
+const SinglePriceCard = ({ product }: { product: any }) => {
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <div style={{ justifyContent: "left" }}>
-        <h3>$ Price</h3>
+        <h3>$ {product.price}</h3>
         <p style={{ color: COLORS.teal }}>FREE Returns</p>
         <p style={{ color: COLORS.teal }}>
           FREE delivery <b>in 2 days</b>

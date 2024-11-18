@@ -4,6 +4,7 @@ import { Box, Container } from "@mui/material";
 import React, { useEffect } from "react";
 import PrimeCard from "./PrimeCard";
 import SinglePriceCard from "./SinglePriceCard";
+import Image from "next/image";
 
 const ProductDetails = ({ product }: { product: any }) => {
   console.log(product.title);
@@ -16,18 +17,24 @@ const ProductDetails = ({ product }: { product: any }) => {
       }}
     >
       <Box>
-        <p>image</p>
+        <Image
+          alt={product.title}
+          src={product.image}
+          width={225}
+          height={257}
+          priority={true}
+        />
       </Box>
       <Box>
         <h4>{product.title}</h4>
-        <p>Rating</p>
+        <p>rating</p>
         <h3>${product.price}</h3>
         <p style={{ color: COLORS.teal }}>
           <b>Free</b> Returns
         </p>
         <p>Lower Price Availability </p>
         <h5>Description </h5>
-        <p>descriptions </p>
+        <p>{product.description} </p>
       </Box>
       <Box>
         <Box
@@ -38,7 +45,7 @@ const ProductDetails = ({ product }: { product: any }) => {
           }}
         >
           <PrimeCard />
-          <SinglePriceCard />
+          <SinglePriceCard product={product} />
         </Box>
       </Box>
     </Container>
