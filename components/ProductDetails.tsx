@@ -13,10 +13,13 @@ const ProductDetails = ({ product }: { product: any }) => {
       sx={{
         backgroundColor: COLORS.white,
         display: "flex",
-        justifyContent: "space-between",
+        // justifyContent: "space-between",
+        paddingTop: "6rem",
+        height: "100vh",
+        width: "100vw",
       }}
     >
-      <Box>
+      <Box sx={{ margin: "0 2rem" }}>
         <Image
           alt={product.title}
           src={product.image}
@@ -25,9 +28,9 @@ const ProductDetails = ({ product }: { product: any }) => {
           priority={true}
         />
       </Box>
-      <Box>
+      <Box sx={{ marginLeft: "2rem" }}>
         <h4>{product.title}</h4>
-        <p>rating</p>
+        {/* <p>{product.rating}</p> */}
         <h3>${product.price}</h3>
         <p style={{ color: COLORS.teal }}>
           <b>Free</b> Returns
@@ -42,10 +45,32 @@ const ProductDetails = ({ product }: { product: any }) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            marginLeft: "2rem",
           }}
         >
-          <PrimeCard />
-          <SinglePriceCard product={product} />
+          <Box
+            sx={{
+              border: 1,
+              borderColor: "lightGrey",
+              height: "15vh",
+              marginBottom: "2rem",
+              padding: "2rem",
+              width: "20vw",
+            }}
+          >
+            <PrimeCard />
+          </Box>
+          <Box
+            sx={{
+              border: 1,
+              borderColor: "lightGrey",
+              height: "40vh",
+              padding: "2rem",
+              width: "20vw",
+            }}
+          >
+            <SinglePriceCard product={product} />
+          </Box>
         </Box>
       </Box>
     </Container>

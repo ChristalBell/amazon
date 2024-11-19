@@ -12,7 +12,7 @@ const AddToCartButton = () => {
           background: COLORS.amber,
           color: COLORS.darkBlue,
           // backgroundColor: COLORS.yellow,
-          width: "20rem",
+          width: "15rem",
           height: "3rem",
           borderRadius: "2rem",
         }}
