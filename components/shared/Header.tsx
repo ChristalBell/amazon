@@ -7,6 +7,7 @@ import HeaderLink from "./HeaderLink";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Badge } from "@mui/base/Badge";
 
 const Header = () => {
   const linkList = [
@@ -58,7 +59,18 @@ const Header = () => {
             href="/cart"
             style={{ display: "flex", alignItems: "flex-end" }}
           >
-            <ShoppingCartIcon fontSize="large" />
+            <Badge
+              // badgeContent=""
+              anchorOrigin={{  vertical: "top"
+                horizontal: "right"}}
+            
+              // style={{
+              //   backgroundColor: "orange",
+              //   borderRadius: "50%",
+              // }}
+            >
+              <ShoppingCartIcon fontSize="large" />
+            </Badge>
             <Typography sx={{ fontSize: "1rem", fontWeight: 700 }}>
               Cart
             </Typography>
