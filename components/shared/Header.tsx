@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Badge } from "@mui/base/Badge";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const linkList = [
@@ -29,6 +30,7 @@ const Header = () => {
     "Luxury Stores",
   ];
 
+  const { cartItems } = useSelector((state) => state.cartItems);
   return (
     <Box
       sx={{
@@ -59,16 +61,7 @@ const Header = () => {
             href="/cart"
             style={{ display: "flex", alignItems: "flex-end" }}
           >
-            <Badge
-              // badgeContent=""
-              anchorOrigin={{  vertical: "top"
-                horizontal: "right"}}
-            
-              // style={{
-              //   backgroundColor: "orange",
-              //   borderRadius: "50%",
-              // }}
-            >
+            <Badge badgeContent={cartItems}>
               <ShoppingCartIcon fontSize="large" />
             </Badge>
             <Typography sx={{ fontSize: "1rem", fontWeight: 700 }}>

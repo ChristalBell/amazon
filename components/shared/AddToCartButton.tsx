@@ -1,9 +1,12 @@
+import { addCartItems } from "@/store/cartItemSlice";
 import { COLORS } from "@/styles/colors";
-import { Button } from "@mui/material";
+import { Button, getFormControlLabelUtilityClasses } from "@mui/material";
 import { amber, yellow } from "@mui/material/colors";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 const AddToCartButton = () => {
+  const dispatch = useDispatch();
   return (
     <div>
       <Button
@@ -15,6 +18,9 @@ const AddToCartButton = () => {
           width: "15rem",
           height: "3rem",
           borderRadius: "2rem",
+        }}
+        onClick={() => {
+          dispatch(addCartItems());
         }}
       >
         ADD TO CART
