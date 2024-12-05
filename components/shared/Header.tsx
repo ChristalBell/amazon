@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Badge } from "@mui/base/Badge";
+
+import { RootState, AppDispatch } from "../../store/index";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -30,7 +32,7 @@ const Header = () => {
     "Luxury Stores",
   ];
 
-  const { cartItems } = useSelector((state) => state.cartItems);
+  const { cartItems } = useSelector((state) => state.cartItems.cartItems);
   return (
     <Box
       sx={{

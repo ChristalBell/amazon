@@ -1,6 +1,6 @@
 import { configureStore, Tuple } from "@reduxjs/toolkit";
 import apiSlice from "../store/productsSlice";
-import cartItemSlice from "../store/cartItemSlice";
+import { cartItemSlice } from "../store/cartItemSlice";
 
 export const store = configureStore({
   reducer: {
