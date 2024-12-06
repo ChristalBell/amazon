@@ -1,4 +1,4 @@
-import { addCartItems } from "@/store/cartItemSlice";
+import { addCartItems } from "@/store/cartItemReducer";
 import { COLORS } from "@/styles/colors";
 import { Button, getFormControlLabelUtilityClasses } from "@mui/material";
 import React from "react";
