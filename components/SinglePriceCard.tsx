@@ -1,6 +1,7 @@
 import { COLORS } from "@/styles/colors";
 import React from "react";
 import AddToCartButton from "./shared/AddToCartButton";
+import RemoveFromCartButton from "./shared/RemoveFromCartButton";
 
 const SinglePriceCard = ({ product }: { product: any }) => {
   return (
@@ -23,6 +24,7 @@ const SinglePriceCard = ({ product }: { product: any }) => {
         </p>
       </div>
       <AddToCartButton />
+      <RemoveFromCartButton />
     </div>
   );
 };

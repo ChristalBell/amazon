@@ -9,6 +9,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Badge } from "@mui/base/Badge";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Header = () => {
   const { cartItems } = useSelector((state: any) => state.cartItems);
@@ -65,9 +66,6 @@ const Header = () => {
             <Badge badgeContent={cartItems}>
               <ShoppingCartIcon fontSize="large" />
             </Badge>
-            <Typography sx={{ fontSize: "1rem", fontWeight: 700 }}>
-              Cart
-            </Typography>
           </HeaderLink>
         </Box>
       </Box>
