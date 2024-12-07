@@ -60,7 +60,7 @@ const Header = () => {
             </Typography>
           </HeaderLink>
           <HeaderLink
-            href="/cart"
+            href="/checkout"
             style={{ display: "flex", alignItems: "flex-end" }}
           >
             <Badge badgeContent={cartItems}>
