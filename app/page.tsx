@@ -6,7 +6,7 @@ import ProductCard from "../components/ProductCard";
 
 const DataDisplay: React.FC = () => {
   // const dispatch = useDispatch<AppDispatch>();
-  // const { data, loading, error } = useSelector((state: RootState) => state.api);
+
   const [products, setProducts] = useState<any>({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -27,14 +27,6 @@ const DataDisplay: React.FC = () => {
     fetchData();
   }, []);
 
-  // useEffect(() => {
-  //   fetch(`https://fakestoreapi.com/products/`)
-  //     .then((data) => data.json())
-  //     .then((products) => setProducts(products));
-  // });
-
-  // if (loading) return <div>Loading...</div>;
-  // if (error) return <div> Error: {error}</div>;
   console.log(products);
 
   return (
