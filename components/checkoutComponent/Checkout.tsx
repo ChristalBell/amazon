@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import React from "react";
 import PrimeCard from "../PrimeCard";
 import { COLORS } from "@/styles/colors";
+import ItemsAndShipping from "./ItemsAndShipping";
 
 const Checkout = () => {
   return (
@@ -23,16 +24,18 @@ const Checkout = () => {
           <div>
             <h3>Paying with Galleons</h3>
             <p>
-              <b style={{ color: COLORS.teal }}>Billing Address: </b> Harry
-              Potter, 123 Diagon Alley...
+              <span style={{ color: COLORS.teal }}>Billing Address: </span>{" "}
+              Harry Potter, 123 Diagon Alley...
             </p>
           </div>
         </div>
 
         <div>
           <h2>3 Review Items and Shipping</h2>
+          <ItemsAndShipping />
         </div>
       </Container>
+
       <div>
         <Container>
           <p>place your order button</p>
