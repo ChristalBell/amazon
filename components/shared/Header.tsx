@@ -11,7 +11,7 @@ import { Badge } from "@mui/base/Badge";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const { cartItems } = useSelector((state) => state.cartItems);
+  // const { cartItems } = useSelector((state) => state.cartItems);
 
   const linkList = [
     "Medical Care",
@@ -62,9 +62,9 @@ const Header = () => {
             href="/cart"
             style={{ display: "flex", alignItems: "flex-end" }}
           >
-            <Badge badgeContent={cartItems}>
+            {/* <Badge badgeContent={test}>
               <ShoppingCartIcon fontSize="large" />
-            </Badge>
+            </Badge> */}
             <Typography sx={{ fontSize: "1rem", fontWeight: 700 }}>
               Cart
             </Typography>
