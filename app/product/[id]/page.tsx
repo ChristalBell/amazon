@@ -1,6 +1,5 @@
 "use client";
 import { useParams } from "next/navigation";
-import { useSelector } from "react-redux";
 import ProductDetails from "@/components/ProductDetails";
 import { useEffect, useState } from "react";
 
