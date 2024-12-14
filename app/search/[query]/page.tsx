@@ -11,16 +11,35 @@ const QueryPage = () => {
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/`)
       .then((data) => data.json())
-      .then((data) => data.filter())
       .then((searchedItems) => setSearchedItems(searchedItems));
   });
 
-  //     .then((searchedItems) => setSearchedItems(searchedItems))
-  //     .then ((searchedItems.filter((searchedItem: any) => {
-  //       searchedItem.title.toLowerCase()includes.(query: string [])
-  //     })));
-  // }, [query, searchedItems]);
-  // console.log(searchedItems);
+  console.log(searchedItems);
+
+  let filteredProducts = searchedItems;
+
+  const filterProducts = () => {
+    return filteredProducts.filter((filteredProduct: any) => {
+      return filteredProduct.title.toLowerCase().includes(query);
+    });
+  };
+
+  const found = filterProducts();
+  // let filterProducts = searchedItems;
+
+  // const found = () => {
+  //   filterProducts.filter((filterProduct: any) => {
+  //     return filterProduct.title.toLowerCase().includes(query.toString());
+  //   });
+  // };
+
+  // const foundProducts = found();
+
+  // useEffect(() => {
+  //   fetch(`https://fakestoreapi.com/products/`)
+  //     .then((data) => data.json())
+  //     .then((searchedItems) => setSearchedItems(searchedItems));
+  // });
 
   // const filterProducts = () => {
   //   return searchedItems.filter((searchedItem: any) => {
@@ -29,16 +48,9 @@ const QueryPage = () => {
   // };
 
   // const filteredProducts = filterProducts();
-  // console.log(filteredProducts);
 
-  const filteredProducts = searchedItems.filter((searchedItem: any) =>
-    searchedItem.title.toLowerCase().includes(query.toString)
-  );
-  console.log(filteredProducts);
   return (
-    <div style={{ display: "flex" }}>
-      {<SearchResults products={filteredProducts} />}
-    </div>
+    <div style={{ display: "flex" }}>{<SearchResults products={found} />}</div>
   );
 };
 
