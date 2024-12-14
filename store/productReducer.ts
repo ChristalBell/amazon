@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { useState } from "react";
+import type { RootState } from "./index";
 
 export interface ProductState {
   finalSelection: any;
@@ -20,3 +20,5 @@ export const productSlice = createSlice({
 
 export const { addSelection } = productSlice.actions;
 export default productSlice.reducer;
+export const getFinalSelection = (state: RootState) =>
+  state.finalSelection.finalSelection;

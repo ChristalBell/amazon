@@ -23,6 +23,7 @@ const SinglePriceCard = ({ product }: { product: any }) => {
           <b>Only 7 left in stock - order soon.</b>
         </p>
       </div>
+
       <AddToCartButton />
       <RemoveFromCartButton />
     </div>

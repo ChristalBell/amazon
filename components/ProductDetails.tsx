@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import PrimeCard from "./PrimeCard";
 import SinglePriceCard from "./SinglePriceCard";
 import Image from "next/image";
+import SpecificItemAddedButton from "./shared/SpecificItemAddedButton";
 
 const ProductDetails = ({ product }: { product: any }) => {
   console.log(product.title);
@@ -38,6 +39,7 @@ const ProductDetails = ({ product }: { product: any }) => {
         <p>Lower Price Availability </p>
         <h5>Description </h5>
         <p>{product.description} </p>
+        <SpecificItemAddedButton product={product} />
       </Box>
       <Box>
         <Box

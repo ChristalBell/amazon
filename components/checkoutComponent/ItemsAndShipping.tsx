@@ -4,8 +4,12 @@ import { COLORS } from "@/styles/colors";
 import Radio from "@mui/material/Radio";
 import PlaceOrderButton from "./PlaceOrderButton";
 import Terms from "./Terms";
+import { useSelector } from "react-redux";
+import { getFinalSelection } from "@/store/productReducer";
 
-const ItemsAndShipping = () => {
+const ItemsAndShipping = ({ product }: { product: any }) => {
+  const selected = useSelector(getFinalSelection);
+
   return (
     <div>
       <Box
@@ -18,6 +22,16 @@ const ItemsAndShipping = () => {
           boxShadow: "10px 5px 5px lightGrey",
         }}
       >
+        {selected.map((product: any) => {
+          return;
+
+          <div style={{ display: "flex" }}>
+            <p>image</p>
+            <h3>{product.title}</h3>
+            <p style={{ color: COLORS.red, fontWeight: "bolder" }}>price</p>
+          </div>;
+        })}
+
         <div
           style={{
             display: "flex",
@@ -32,7 +46,7 @@ const ItemsAndShipping = () => {
 
           <div>
             <legend>
-              <h4>Choose your Prime delivery option:</h4>{" "}
+              <h4>Choose your Prime delivery option:</h4>
             </legend>
             <div>
               <input
