@@ -7,7 +7,19 @@ import SinglePriceCard from "./SinglePriceCard";
 import Image from "next/image";
 import SpecificItemAddedButton from "./shared/SpecificItemAddedButton";
 
-const ProductDetails = ({ product }: { product: any }) => {
+const ProductDetails = ({
+  product,
+}: {
+  product: {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    category: string;
+    image: string;
+    rating: { rate: number; count: number };
+  };
+}) => {
   return (
     <Container
       sx={{
@@ -20,13 +32,7 @@ const ProductDetails = ({ product }: { product: any }) => {
       }}
     >
       <Box sx={{ margin: "0 2rem" }}>
-        <Image
-          alt={product.title}
-          src={product.image}
-          width={225}
-          height={257}
-          priority
-        />
+        <img alt={product.title} src={product.image} width={225} height={257} />
       </Box>
       <Box sx={{ marginLeft: "2rem" }}>
         <h4>{product.title}</h4>
