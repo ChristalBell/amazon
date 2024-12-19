@@ -8,7 +8,6 @@ import Image from "next/image";
 import SpecificItemAddedButton from "./shared/SpecificItemAddedButton";
 
 const ProductDetails = ({ product }: { product: any }) => {
-  console.log(product.title);
   return (
     <Container
       sx={{

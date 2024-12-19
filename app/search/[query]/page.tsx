@@ -12,9 +12,7 @@ const QueryPage = () => {
     fetch(`https://fakestoreapi.com/products/`)
       .then((data) => data.json())
       .then((searchedItems) => setSearchedItems(searchedItems));
-  });
-
-  console.log(searchedItems);
+  }, [query]);
 
   let filteredProducts = searchedItems;
 

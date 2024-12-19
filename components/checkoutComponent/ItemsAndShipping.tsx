@@ -55,7 +55,7 @@ const ItemsAndShipping = ({ product }: { product: any }) => {
                 name="Tomorrow morning $2.99 - Delivery"
                 value="$2.99"
               />
-              <label for="$2.99">
+              <label htmlFor="$2.99">
                 <span style={{ color: COLORS.green }}>Tomorrow morning</span>{" "}
                 $2.99 - Delivery
               </label>
@@ -63,7 +63,7 @@ const ItemsAndShipping = ({ product }: { product: any }) => {
 
             <div>
               <input type="radio" id="one-day" name="drone" value="free" />
-              <label for="one-day">
+              <label htmlFor="one-day">
                 <span style={{ color: COLORS.green }}>Tomorrow afternoon </span>{" "}
                 FREE One Day Delivery
               </label>
@@ -71,7 +71,7 @@ const ItemsAndShipping = ({ product }: { product: any }) => {
 
             <div>
               <input type="radio" id="amazon-day" name="drone" value="free" />
-              <label for="amazon-day">
+              <label htmlFor="amazon-day">
                 <span style={{ color: COLORS.green }}>Friday</span> FREE Amazon
                 Day Delivery
               </label>

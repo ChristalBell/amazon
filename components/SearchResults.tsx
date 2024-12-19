@@ -3,8 +3,6 @@ import React from "react";
 import ProductCard from "./ProductCard";
 
 const SearchResults = ({ products }: { products: any[] }) => {
-  console.log(products);
-
   return (
     <Box
       sx={{

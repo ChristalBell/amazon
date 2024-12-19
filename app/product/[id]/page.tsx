@@ -11,7 +11,7 @@ const ProductPage = () => {
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then((data) => data.json())
       .then((product) => setProduct(product));
-  }, [id, product]);
+  }, [id]);
 
   return <ProductDetails product={product} />;
 };

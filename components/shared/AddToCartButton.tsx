@@ -2,11 +2,10 @@ import { addCartItems } from "@/store/cartItemReducer";
 import { COLORS } from "@/styles/colors";
 import { Button, getFormControlLabelUtilityClasses } from "@mui/material";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "@/app/hooks";
 
 const AddToCartButton = () => {
-  const dispatch = useDispatch();
-
+  const dispatch = useAppDispatch();
   return (
     <div>
       <Button

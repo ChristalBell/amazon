@@ -63,9 +63,9 @@ const Header = () => {
             href="/checkout"
             style={{ display: "flex", alignItems: "flex-end" }}
           >
-            <Badge badgeContent={cartItems}>
+            {/* <Badge badgeContent={cartItems}>
               <ShoppingCartIcon fontSize="large" />
-            </Badge>
+            </Badge> */}
           </HeaderLink>
         </Box>
       </Box>

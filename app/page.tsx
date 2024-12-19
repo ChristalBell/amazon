@@ -1,12 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import ProductCard from "../components/ProductCard";
 
 const DataDisplay: React.FC = () => {
-  // const dispatch = useDispatch<AppDispatch>();
-
   const [products, setProducts] = useState<any>({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,8 +23,6 @@ const DataDisplay: React.FC = () => {
 
     fetchData();
   }, []);
-
-  console.log(products);
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
