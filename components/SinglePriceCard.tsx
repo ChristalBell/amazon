@@ -16,19 +16,20 @@ const SinglePriceCard = ({ product }: { product: any }) => {
           FREE delivery <b>in 2 days</b>
         </p>
 
-        <p>
-          Or fastest delivery <b>tomorrow.</b> Order within{" "}
+        <div>
+          <p>
+            Or fastest delivery <b>tomorrow.</b> Order within{" "}
+          </p>
           <p style={{ color: COLORS.green }}>10 hrs and 8 mins</p>
-        </p>
+        </div>
         <p style={{ color: COLORS.teal }}>Deliver to New York 10011</p>
         <p style={{ color: COLORS.red }}>
           <b>Only 7 left in stock - order soon.</b>
         </p>
       </div>
-      <div>
-        <AddToCartButton />
-        <RemoveFromCartButton />
-      </div>
+
+      <AddToCartButton />
+      <RemoveFromCartButton />
     </div>
   );
 };
