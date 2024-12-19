@@ -7,9 +7,9 @@ import { ThemeProvider } from "@mui/material";
 import theme from "@/styles/theme";
 import { COLORS } from "@/styles/colors";
 import Header from "@/components/shared/Header";
-
-import { store } from "../store/index";
+import { store, persistor } from "../store/index";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata: Metadata = {
@@ -29,11 +29,13 @@ export default function RootLayout({
         style={{ backgroundColor: COLORS.lightGrey, margin: 0 }}
       >
         <Provider store={store}>
-          <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            <ThemeProvider theme={theme}>
-              <Header /> {children}
-            </ThemeProvider>
-          </AppRouterCacheProvider>
+          <PersistGate loading={null} persistor={persistor}>
+            <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+              <ThemeProvider theme={theme}>
+                <Header /> {children}
+              </ThemeProvider>
+            </AppRouterCacheProvider>
+          </PersistGate>
         </Provider>
       </body>
     </html>

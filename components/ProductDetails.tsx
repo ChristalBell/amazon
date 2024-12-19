@@ -25,7 +25,7 @@ const ProductDetails = ({ product }: { product: any }) => {
           src={product.image}
           width={225}
           height={257}
-          priority={true}
+          priority
         />
       </Box>
       <Box sx={{ marginLeft: "2rem" }}>

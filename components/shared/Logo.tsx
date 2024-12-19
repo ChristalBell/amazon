@@ -5,7 +5,13 @@ import React from "react";
 const Logo = () => {
   return (
     <Link href="/" style={{ marginLeft: "1rem" }}>
-      <Image alt="logo" src="/amazon-logo-2.webp" width={100} height={30} />
+      <Image
+        alt="logo"
+        src="/amazon-logo-2.webp"
+        width={100}
+        height={30}
+        priority
+      />
     </Link>
   );
 };

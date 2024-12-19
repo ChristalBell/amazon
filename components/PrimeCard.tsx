@@ -5,7 +5,13 @@ import { COLORS } from "@/styles/colors";
 const PrimeCard = () => {
   return (
     <div>
-      <Image alt="logo" src="/public/prime-logo.png" height={160} width={100} />
+      <Image
+        alt="logo"
+        src="/public/prime-logo.png"
+        height={160}
+        width={100}
+        priority
+      />
       <p>
         <b>
           Enjoy fast, free delivery, exclusive deals, and award-wining moves &
