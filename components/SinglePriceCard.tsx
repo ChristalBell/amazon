@@ -10,10 +10,12 @@ const SinglePriceCard = ({ product }: { product: any }) => {
     >
       <div style={{ justifyContent: "left" }}>
         <h3>$ {product.price}</h3>
+
         <p style={{ color: COLORS.teal }}>FREE Returns</p>
         <p style={{ color: COLORS.teal }}>
           FREE delivery <b>in 2 days</b>
         </p>
+
         <p>
           Or fastest delivery <b>tomorrow.</b> Order within{" "}
           <p style={{ color: COLORS.green }}>10 hrs and 8 mins</p>
@@ -23,9 +25,10 @@ const SinglePriceCard = ({ product }: { product: any }) => {
           <b>Only 7 left in stock - order soon.</b>
         </p>
       </div>
-
-      <AddToCartButton />
-      <RemoveFromCartButton />
+      <div>
+        <AddToCartButton />
+        <RemoveFromCartButton />
+      </div>
     </div>
   );
 };

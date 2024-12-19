@@ -23,8 +23,6 @@ const ItemsAndShipping = ({ product }: { product: any }) => {
         }}
       >
         {selected.map((product: any) => {
-          return;
-
           <div style={{ display: "flex" }}>
             <p>image</p>
             <h3>{product.title}</h3>
