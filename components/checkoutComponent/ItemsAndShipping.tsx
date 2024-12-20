@@ -21,7 +21,7 @@ const ItemsAndShipping = ({
   };
 }) => {
   const selected = useSelector(getFinalSelection);
-  console.log(selected);
+
   return (
     <div>
       <Box
