@@ -7,9 +7,21 @@ import Terms from "./Terms";
 import { useSelector } from "react-redux";
 import { getFinalSelection } from "@/store/productReducer";
 
-const ItemsAndShipping = ({ product }: { product: any }) => {
+const ItemsAndShipping = ({
+  product,
+}: {
+  product: {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    category: string;
+    image: string;
+    rating: { rate: number; count: number };
+  };
+}) => {
   const selected = useSelector(getFinalSelection);
-
+  console.log(selected);
   return (
     <div>
       <Box
@@ -22,13 +34,13 @@ const ItemsAndShipping = ({ product }: { product: any }) => {
           boxShadow: "10px 5px 5px lightGrey",
         }}
       >
-        {selected.map((product: any) => {
+        {/* {selected.map((product: any) => {
           <div style={{ display: "flex" }}>
             <p>image</p>
             <h3>{product.title}</h3>
             <p style={{ color: COLORS.red, fontWeight: "bolder" }}>price</p>
           </div>;
-        })}
+        })} */}
 
         <div
           style={{

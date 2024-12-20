@@ -19,9 +19,9 @@ const SpecificItemAddedButton = ({ product }: { product: any }) => {
           height: "3rem",
           borderRadius: "2rem",
         }}
-        // onClick={() => {
-        //   dispatch(() => addSelection(product: any));
-        // }}
+        onClick={() => {
+          dispatch(() => addSelection(product));
+        }}
       >
         +1
       </Button>
