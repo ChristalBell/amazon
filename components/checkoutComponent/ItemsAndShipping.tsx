@@ -5,7 +5,8 @@ import Radio from "@mui/material/Radio";
 import PlaceOrderButton from "./PlaceOrderButton";
 import Terms from "./Terms";
 import { useSelector } from "react-redux";
-import { getFinalSelection } from "@/store/productReducer";
+import { getFinalSelection, ProductState } from "@/store/productReducer";
+import { useAppSelector } from "@/app/hooks";
 
 const ItemsAndShipping = ({
   product,
@@ -20,8 +21,7 @@ const ItemsAndShipping = ({
     rating: { rate: number; count: number };
   };
 }) => {
-  const selected = useSelector(getFinalSelection);
-
+  const selected = useAppSelector(getFinalSelection);
   return (
     <div>
       <Box
@@ -34,13 +34,13 @@ const ItemsAndShipping = ({
           boxShadow: "10px 5px 5px lightGrey",
         }}
       >
-        {/* {selected.map((product: any) => {
+        {selected.map((product: any) => {
           <div style={{ display: "flex" }}>
             <p>image</p>
             <h3>{product.title}</h3>
             <p style={{ color: COLORS.red, fontWeight: "bolder" }}>price</p>
           </div>;
-        })} */}
+        })}
 
         <div
           style={{

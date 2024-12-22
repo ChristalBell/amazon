@@ -2,11 +2,25 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "./index";
 
 export interface ProductState {
-  finalSelection: any;
+  finalSelection: Array<Product>;
 }
-const initialState: ProductState = {
+
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: { rate: number; count: number };
+}
+
+export const initialState: ProductState = {
   finalSelection: [],
 };
+// const initialState: ProductState = {
+//   finalSelection: [],
+// };
 
 export const productSlice = createSlice({
   name: "finalSelection",
@@ -20,5 +34,4 @@ export const productSlice = createSlice({
 
 export const { addSelection } = productSlice.actions;
 export default productSlice.reducer;
-export const getFinalSelection = (state: RootState) =>
-  state.finalSelection.finalSelection;
+export const getFinalSelection = (state: RootState) => state.finalSelection;
